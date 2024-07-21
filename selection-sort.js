@@ -6,7 +6,7 @@ function selectionSort(arr) {
   // While the array is not empty...
   while (unsortedArr.length > 0) {
     // Do not move this console.log
-    console.log(sorted.join(","));
+    // console.log(sorted.join(","));
     // Find the index of the minimum value in the unsorted half
     let minValue = Infinity;
     let minIndex = -1;
@@ -30,7 +30,7 @@ function selectionSortInPlace(arr) {
   // Repeat while the unsorted half is not empty:
   while (divider < arr.length) {
     // Do not move this console.log
-    console.log(arr.join(","));
+    // console.log(arr.join(","));
 
     // Find the index of the minimum value in the unsorted half
     let minVal = Infinity;
@@ -44,16 +44,17 @@ function selectionSortInPlace(arr) {
     }
     // Shift every unsorted value to the left of the min value to the right by 1
 
-    // for (let j = minIndex; j > divider; j--) {
-    //   arr[j] = arr[j - 1];
-    // }
+    for (let j = minIndex; j > divider; j--) {
+      arr[j] = arr[j - 1];
+    }
 
     // We can also simply swap the min values and the current value at the divider. This
     // way we can avoid unnecessary shifting as simply code logic as:
-    [arr[minIndex], arr[divider]] = [arr[divider], arr[minIndex]]
+
+    // [arr[minIndex], arr[divider]] = [arr[divider], arr[minIndex]]
     // Put the min value at the divider
 
-    // arr[divider] = minVal;
+    arr[divider] = minVal;
 
     // Increment the divider and repeat
     divider++;
